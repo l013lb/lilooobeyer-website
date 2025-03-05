@@ -111,3 +111,56 @@ text-align: center;
     display: flex; 
     justify-content: space-between; 
 }
+
+
+@media (max-width: 768px) {
+    .header-container {
+        margin-left: 20px; /* Weniger Abstand für kleine Bildschirme */
+        flex-direction: column; /* Header-Elemente untereinander statt nebeneinander */
+        margin-top: 5%;
+    }
+
+    .homepage-image {
+        width: 80%; /* Bildgröße anpassen */
+        height: auto;
+    }
+
+    .image-container {
+        flex-direction: column; /* Bilder untereinander anstatt nebeneinander */
+        align-items: center;
+        gap: 30px; /* Weniger Abstand zwischen den Bildern */
+    }
+
+    .btn1, .btn2, .btn3, .btn4, .btn5 {
+        width: 90%; /* Buttons skalieren auf kleinen Geräten */
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .footer {
+        font-size: 14px; /* Kleinere Schrift für die Fußzeile */
+    }
+}
+
+/* Beispiel für noch kleinere Bildschirme (z.B. Smartphones) */
+@media (max-width: 480px) {
+    .header-container {
+        margin-left: 10px;
+    }
+
+    .homepage-image {
+        width: 100%; /* Bildgröße anpassen */
+    }
+
+    .btn1, .btn2, .btn3, .btn4, .btn5 {
+        width: 95%; /* Buttons fast vollständig an Bildschirmbreite anpassen */
+        height: auto;
+    }
+
+    .footer {
+        font-size: 12px; /* Noch kleinere Schrift für Handys */
+    }
+}
+
+
+
