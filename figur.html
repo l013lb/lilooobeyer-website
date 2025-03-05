@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website-lilooobeyer.de</title>
+    <link rel="stylesheet" href="styles.css">
+ <title>Malerei</title>
+ 
+</head>
+<body>
+
+<div class="header-container">
+    <a href="kontakt.html" class="text-link">Kontakt</a>
+    <a href="index.html">
+        <img src="unterschrift.png" alt="Homepage Logo" class="homepage-image">
+    </a>
+    <a href="https://www.instagram.com/lilooosart/" class="text-link">Instagram</a>
+    </div>
+<div class="image-container">
+
+<div class="slider-container">
+ <div class="slider-images">
+  <img src="png/sku1.png" alt="Bild 1">
+<img src="png/vase.png" alt="Bild 2">
+  <img src="png/sku3.png" alt="Bild 3">
+  <img src="png/sku4.png" alt="Bild 4">
+<img src="png/sku5.png" alt="Bild 5">
+
+ </div>
+ <div class="slider-nav left" onclick="changeSlide('prev')"></div>
+ <div class="slider-nav right" onclick="changeSlide('next')"></div>
+</div>
+
+
+<style>
+
+  body {
+   margin: 0;
+   font-family: Consolas, monaco, monospace;
+  }
+
+  .slider-container {
+   margin: 50px auto;
+   position: relative;
+   width: 800px; /* Breite des Sliders */
+   height: 550px; /* Höhe des Sliders */
+   overflow: hidden; /* Überschüssige Bilder ausblenden */
+   border: 2px solid transparent;
+   border-radius: 10px;
+  }
+
+  .slider-images {
+   display: flex; /* Bilder horizontal anordnen */
+   transition: transform 0.5s ease-in-out; /* Animation beim Wechsel */
+  }
+
+  .slider-images img {
+   flex-shrink: 0; /* Verhindert, dass Bilder schrumpfen */
+   width: 800px; /* Breite eines einzelnen Bildes */
+   height: 550px; /* Höhe eines einzelnen Bildes */
+   object-fit: cover; /* Proportionale Skalierung des Bildes */
+  }
+
+  /* Unsichtbare Navigationsboxen */
+  .slider-nav {
+   position: absolute;
+   top: 0;
+   width: 50%; /* Jeweils die Hälfte des Containers */
+   height: 100%;
+   background-color: transparent; /* Unsichtbare Box */
+   z-index: 2;
+   cursor: pointer;
+  }
+
+  .slider-nav.left {
+   left: 0;
+   cursor: url('pfeillinks.png') 22 22, auto; /* Benutzerdefinierter Cursor für die linke Seite */
+  }
+
+  .slider-nav.right {
+   right: 0;
+   cursor: url('pfeilrechts.png') 22 22, auto; /* Benutzerdefinierter Cursor für die rechte Seite */
+  }
+
+ </style>
+<script>
+ // Aktueller Index des sichtbaren Bildes
+ let currentIndex = 0;
+
+ // Bilder und Container selektieren
+ const images = document.querySelectorAll('.slider-images img');
+ const sliderImages = document.querySelector('.slider-images');
+ const totalImages = images.length;
+
+ // Funktion, um das Bild zu wechseln
+ function changeSlide(direction) {
+  if (direction === 'next') {
+   // Zum nächsten Bild
+   currentIndex = (currentIndex + 1) % totalImages;
+  } else if (direction === 'prev') {
+   // Zum vorherigen Bild
+   currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+  }
+
+  // Verschiebe den Slider
+  sliderImages.style.transform = `translateX(-${currentIndex * 800}px)`;
+ }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
